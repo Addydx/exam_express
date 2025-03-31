@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lista de Libros</title>
-  <link rel="stylesheet" href="/css/style.css"> <!-- Vinculación del archivo CSS -->
+  <link rel="stylesheet" href="/css/style.css"> 
 </head>
 <body>
 
@@ -28,14 +28,13 @@
     <tbody>
       <% libros.forEach(libro => { %>
         <tr>
-          <td><%= libro.titulo %></td>
-          <td><%= libro.autor %></td>
-          <td><%= libro.anio_publicacion %></td>
-          <td><%= libro.genero %></td>
+          <td><%= libro?.titulo || "" %></td>
+          <td><%= libro?.autor || "" %></td>
+          <td><%= libro?.anio_publicacion || "" %></td>
+          <td><%= libro?.genero || "" %></td>
           <td>
             <a href="/libros/<%= libro.id %>/editar" class="btn btn-sm btn-warning">✏️ Editar</a>
-            <form action="/libros/<%= libro.id %>/eliminar" method="POST" class="d-inline">
-              <input type="hidden" name="_method" value="DELETE">
+            <form action="/libros/<%= libro.id %>?_method=DELETE" method="POST" class="d-inline">
               <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Estás seguro de eliminar este libro?')">🗑️ Eliminar</button>
             </form>
           </td>
