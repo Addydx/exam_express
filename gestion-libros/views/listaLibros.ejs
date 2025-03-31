@@ -1,0 +1,34 @@
+<div class="container mt-5">
+  <h1 class="mb-4">📚 Lista de Libros</h1>
+
+  <a href="/libros/nuevo" class="btn btn-primary mb-3">➕ Nuevo Libro</a>
+
+  <table class="table table-dark table-striped text-center">
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Autor</th>
+        <th>Año</th>
+        <th>Género</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% libros.forEach(libro => { %>
+        <tr>
+          <td><%= libro.titulo %></td>
+          <td><%= libro.autor %></td>
+          <td><%= libro.anio_publicacion %></td>
+          <td><%= libro.genero %></td>
+          <td>
+            <a href="/libros/<%= libro.id %>/editar" class="btn btn-sm btn-warning">✏️ Editar</a>
+            <form action="/libros/<%= libro.id %>/eliminar" method="POST" class="d-inline">
+              <input type="hidden" name="_method" value="DELETE">
+              <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Estás seguro de eliminar este libro?')">🗑️ Eliminar</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>

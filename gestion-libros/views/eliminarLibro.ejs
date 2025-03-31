@@ -1,0 +1,12 @@
+<%- include('partials/header') %>
+
+<h2>¿Estás seguro de que quieres eliminar este libro?</h2>
+<p><strong>Título:</strong> <%= libro.titulo %></p>
+<p><strong>Autor:</strong> <%= libro.autor %></p>
+
+<form action="/libros/<%= libro.id %>?_method=DELETE" method="POST">
+    <button type="submit">Eliminar</button>
+    <a href="/libros">Cancelar</a>
+</form>
+
+<%- include('partials/footer') %>
