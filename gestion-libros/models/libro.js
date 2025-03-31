@@ -19,7 +19,7 @@ const Libro = sequelize.define('Libro', {
     allowNull: false
   }
 }, {
-  timestamps: false // Desactivamos los timestamps automáticos
+  timestamps: false
 });
 
 module.exports = Libro;

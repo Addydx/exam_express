@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const librosController = require('../controllers/librosController');
+const librosController = require('../controllers/libroscontroller');
 
 // CRUD de Libros
 router.get('/', librosController.listarLibros);

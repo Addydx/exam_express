@@ -16,3 +16,4 @@ document.querySelectorAll('.eliminar-form').forEach(form => {
       bsAlert.close();
     });
   }, 5000);
+  

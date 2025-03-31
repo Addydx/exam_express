@@ -13,12 +13,12 @@
     </tr>
   </thead>
   <tbody>
-    <% libros.forEach(libro => { %>
+
       <tr>
-        <td><%= libro.titulo %></td>
-        <td><%= libro.autor %></td>
-        <td><%= libro.anio_publicacion %></td>
-        <td><%= libro.genero %></td>
+        <td><%= libro  ?  libro.titulo : " " %></td>
+        <td><%= libro  ?  libro.autor : " " %></td>
+        <td><%= libro  ?  libro.anio_publicacion : " " %></td>
+        <td><%= libro  ? libro.genero : " " %></td>
         <td>
           <a href="/libros/<%= libro.id %>/editar" class="btn btn-sm btn-warning">Editar</a>
           <form action="/libros/<%= libro.id %>/eliminar" method="POST" class="d-inline">
@@ -26,6 +26,8 @@
           </form>
         </td>
       </tr>
-    <% }) %>
   </tbody>
 </table>
+
+
+
