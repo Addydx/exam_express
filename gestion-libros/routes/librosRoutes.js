@@ -2,19 +2,16 @@ const express = require('express');
 const router = express.Router();
 const librosController = require('../controllers/libroscontroller');
 
-// RESTful routes with HTML form support
-router.get('/', librosController.listarLibros); // List all books
-router.get('/nuevo', librosController.mostrarFormularioNuevo); // Show new book form
-router.post('/', librosController.crearLibro); // Create new book
+router.get('/', librosController.listarLibros); 
+router.get('/nuevo', librosController.mostrarFormularioNuevo); 
+router.post('/', librosController.crearLibro); 
 
-// Edit routes
-router.get('/:id/editar', librosController.mostrarFormularioEditar); // Show edit form
-router.put('/:id', librosController.actualizarLibro); // Handle edit form submission
-router.post('/:id/editar', librosController.actualizarLibro); // Alternative for forms
+router.get('/:id/editar', librosController.mostrarFormularioEditar); 
+router.put('/:id', librosController.actualizarLibro); 
+router.post('/:id/editar', librosController.actualizarLibro); 
 
-// Delete routes
-router.get('/:id/eliminar', librosController.mostrarEliminar); // Show delete confirmation
-router.delete('/:id', librosController.eliminarLibro); // Handle delete
-router.post('/:id/eliminar', librosController.eliminarLibro); // Alternative for forms
+router.get('/:id/eliminar', librosController.mostrarEliminar); 
+router.delete('/:id', librosController.eliminarLibro); 
+router.post('/:id/eliminar', librosController.eliminarLibro); 
 
 module.exports = router;
